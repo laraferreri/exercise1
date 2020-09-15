@@ -1,15 +1,21 @@
 import React from "react";
 //component imports
 import ArticleCard from '../components/ArticleCard';
+// data imports
+import data from "../components/data";
 
 function ArticleListing(){
+    console.log("data", data)
+    // props=properties  = sends data through the flow of the components
 return (
-    <section>
+    <main>
         <header>
-        <h1> Article Listing </h1>
-        <ArticleCard></ArticleCard>
+        <h1> Article </h1>
         </header>
-    </section>
+        {data.map((article, i) => (
+       < ArticleCard key={i} articleData={article} />
+        ))}
+       </main>
     );
 }
 
