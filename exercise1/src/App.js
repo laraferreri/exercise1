@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import ArticleListing from "./container/ArticleListing";
-import Article from "./containers/Article";
+import Article from "./container/Article";
 
 function App() {
   return (

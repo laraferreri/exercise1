@@ -1,20 +1,30 @@
 .App {
   margin: 0 auto;
-  max-widt
+  max-width: 1080px;
 }
 
-.App-h1{
+.App-h1 {
   font-size: 70px;
 }
 
-.ArticleCard{
+.ArticleCard {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
   margin: 100px 0;
-  padding: 
+  padding: 25px 30px;
 }
 
-.ArticleImage{
-  flex-basis: 
+.ArticleCardImage {
+  flex-basis: 30%;
+  padding-right: 30px;
+}
+
+.ArticleCardImage img {
+  height: auto;
+  width: 100%;
+}
+
+.ArticleCardText {
+  flex-basis: 70%;
 }
