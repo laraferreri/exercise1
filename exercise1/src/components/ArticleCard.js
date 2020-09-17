@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
 
-function ArticleCard (articleData){
-    console.log('articleData',articleData);
+import { link } from "react-router-dom";
 
-    return(
-        <div>
-            <h2> {articleData.title} </h2>
-        </div>
-    );
+function ArticleCard({ articleData }) {
+  return (
+    <div>
+      <div className="ArticleCard">
+        <div className="ArticleCardImage"></div>
+        <img src={articleData.img.url} alt={srticleData.image.alt} />
+        <h2> {articleData.title} </h2>
+        <p>{date}</p>
+        <p>{articleData.blurb}</p>
+        <link to={"/article/${articleData.id}"}> Read More </link>
+      </div>
+    </div>
+  );
 }
 
 export default ArticleCard;
-
-// const coolObject = {
-//     key1: '',
-//     key2: '',
-//     key3: '',
-// }
-
-// const {key 1, key 2 } = coolObject;
-// counsle.log(key1, key2)

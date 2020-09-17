@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
 
-function Article () {
-    return(
-        <secton>
-            <h1> Article </h1>
-        </secton>
-    );
+import { useParams } from "react-router-dom";
+
+function Article() {
+  le;
+  return (
+    <secton>
+      <h1> Article </h1>
+      <p>{id}</p>
+    </secton>
+  );
 }
 
 export default Article;
