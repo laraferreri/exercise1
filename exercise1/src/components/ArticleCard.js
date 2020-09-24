@@ -2,34 +2,11 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { days, months } from "./dateValues";
 
 function ArticleCard({ articleData }) {
   const date = new Date(articleData.publishedDate);
-  const dayofWeek = date.getDay();
+  const dayOfWeek = date.getDay();
   const calendarDate = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
@@ -41,6 +18,7 @@ function ArticleCard({ articleData }) {
           <img src={articleData.image.url} alt={articleData.image.alt} />
         </div>
         <h2> {articleData.title} </h2>
+        <p>{`${days[dayOfWeek]}, ${months[month]} ${calendarDate}, ${year}`}</p>
         <p>{articleData.blurb}</p>
         <Link to={"/article/${articleData.id}"}> Read More </Link>
       </div>

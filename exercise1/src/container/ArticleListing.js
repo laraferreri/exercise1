@@ -7,7 +7,7 @@ import data from "../components/data";
 function ArticleListing() {
   // props=properties  = sends data through the flow of the components
   return (
-    <main>
+    <main className="ArticleListing">
       <header>
         <h1> Article </h1>
       </header>

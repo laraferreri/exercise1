@@ -4,23 +4,49 @@ import { useParams } from "react-router-dom";
 
 import Data from "../components/data";
 
+import { days, months } from "../components/dateValues";
+
 function Article() {
   let { id } = useParams();
 
-  const (!articleData) return null;
+  const articleData = Data.find((article) => article.id === id);
+
+  if (!articleData) return null;
+
+  const date = new Date(articleData.publishedDate);
+  const dayOfWeek = date.getDay();
+  const calendarDate = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
 
   return (
-    <secton>
-      <h1> {articleData.title} </h1>
-      <p>{articleData.publishedDate}</p>
-      <p>{article.Data.blurb}</p>
-      </div>
-      <article>{articleData.articleText.Map((article, i) =>{
-        return <p key= {i}>{article.data}</p>;
-      })}
-        </article>
-    </secton>
+    <section className="Article">
+      <header
+        className="ArticleHeaderWrapper"
+        style={{ backgroundImage: `url('${articleData.image.url}')` }}
+      >
+        <div className="ArticleHeader">
+          <h1>{articleData.title}</h1>
+          <p>{`${days[dayOfWeek]}, ${months[month]} ${calendarDate}, ${year}`}</p>
+          <p className="ArticleHeaderBlurb">{articleData.blurb}</p>
+        </div>
+      </header>
+
+      <article className="ArticleBody">
+        {articleData.articleText.Map((article, i) => {
+          switch (article.type) {
+            case "p":
+              return <p key={i}>{article.data}</p>;
+            case "h2":
+              return <h2 key={i}>{article.data}</h2>;
+            case "h3":
+              return <h3 key={i}>{article.data}</h3>;
+            default:
+              return null;
+          }
+        })}
+      </article>
+    </section>
   );
 }
-
 export default Article;
