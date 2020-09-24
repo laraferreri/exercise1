@@ -2,7 +2,38 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 function ArticleCard({ articleData }) {
+  const date = new Date(articleData.publishedDate);
+  const dayofWeek = date.getDay();
+  const calendarDate = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
   return (
     <div>
       <div className="ArticleCard">
