@@ -33,7 +33,7 @@ function Article() {
       </header>
 
       <article className="ArticleBody">
-        {articleData.articleText.Map((article, i) => {
+        {articleData.articleText.map((article, i) => {
           switch (article.type) {
             case "p":
               return <p key={i}>{article.data}</p>;

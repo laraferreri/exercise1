@@ -12,15 +12,15 @@ function ArticleCard({ articleData }) {
   const year = date.getFullYear();
 
   return (
-    <div>
-      <div className="ArticleCard">
-        <div className="ArticleCardImage">
-          <img src={articleData.image.url} alt={articleData.image.alt} />
-        </div>
+    <div className="ArticleCard">
+      <div className="ArticleCardImage">
+        <img src={articleData.image.url} alt={articleData.image.alt} />
+      </div>
+      <div>
         <h2> {articleData.title} </h2>
         <p>{`${days[dayOfWeek]}, ${months[month]} ${calendarDate}, ${year}`}</p>
         <p>{articleData.blurb}</p>
-        <Link to={"/article/${articleData.id}"}> Read More </Link>
+        <Link to={`/article/${articleData.id}`}> Read More </Link>
       </div>
     </div>
   );
